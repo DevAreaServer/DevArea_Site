@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {RouterModule, Routes} from "@angular/router";
 import {CookieService} from 'ngx-cookie-service';
 
 
@@ -33,18 +32,6 @@ import {BadgeComponent} from './components/pages/options/components/badge/badge.
 import {ThemeSwitcherComponent} from './components/global/theme-switcher/theme-switcher.component';
 import {HowConnectComponent} from './components/pages/how-connect/how-connect.component';
 
-const appRoutes: Routes = [
-    {path: 'menu', component: MenuComponent},
-    {path: '', component: MenuComponent},
-    {path: 'stats', component: StatsComponent},
-    {path: 'reseaux', component: ReseauxComponent},
-    {path: 'staff', component: StaffComponent},
-    {path: 'missions', component: MissionsComponent},
-    {path: 'options', component: OptionsComponent},
-    {path: 'how-connect', component: HowConnectComponent},
-    {path: '**', component: NotFoundComponent}
-]
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -73,8 +60,7 @@ const appRoutes: Routes = [
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule,
-        RouterModule.forRoot(appRoutes)
+        HttpClientModule
     ],
     providers: [
         CookieService
